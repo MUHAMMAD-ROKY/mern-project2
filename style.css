@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* NAVIGATION */
+header {
+    width: 100%;
+    background: #111111;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;              /* beside each other */
+    justify-content: center;    /* center all nav items */
+    align-items: center;
+    gap: 30px;                  /* space between menu items */
+    padding: 20px 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #5cbcfc;
+}
+
+/* SECTION CONTENT */
+section {
+    padding: 40px;
+    font-family: Arial, sans-serif;
+}
+.banner{
+    width: 1280px;
+    height: 500px;
+}
