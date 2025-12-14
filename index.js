@@ -1,26 +1,34 @@
-function greet(name) {
-  console.log("Hello " + name);
-}
+const input = document.getElementById("todoInput");
+const btn = document.getElementById("addBtn");
+const list = document.getElementById("todoList");
 
-greet("Ali");
+btn.addEventListener("click",()=>{
+  const task = input.value;
+  if(task === "") return;
 
+  const li = document.createElement("li");
+  li.innerText = task;
+  list.appendChild(li);
 
-const add = (a, b) => {
-  return a + b;
-};
-const sub = (a, b) => {
-  return a - b;
-};
-const div = (a, b) => {
-  return a / b;
-};
-
-let nums = [1,2,3];
-let doubled = nums.map(n => n * 2);
-console.log(doubled);
+  input.value="";
+});
 
 
 
-console.log(add(10, 5));
-console.log(add(20,15));
-console.log(add(20,15));
+
+document.getElementById("check").addEventListener("click", async () => {
+  const city = document.getElementById("city").value;
+  const result = document.getElementById("result");
+
+  const API_KEY = "YOUR_API_KEY";
+
+  const res = await fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`
+  );
+
+  const data = await res.json();
+
+  result.innerText =
+    `Temp: ${Math.round(data.main.temp - 273)}°C | ` +
+    `Weather: ${data.weather[0].description}`;
+});
